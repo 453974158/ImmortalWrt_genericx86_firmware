@@ -15,7 +15,7 @@
 rm -rf feeds/packages/lang/ruby  # 确保删除现有的 ImmortalWrt ruby 包
 git clone https://github.com/openwrt/packages --depth 1 op-packages
 mkdir -p feeds/openwrtpackages/lang/
-cp -r op-packages/lang/ruby feeds/op-packages/lang/
+cp -r op-packages/lang/ruby feeds/openwrtpackages/lang/
 ./scripts/feeds install -p openwrtpackages ruby
 
 # find feeds/openwrtpackages/ -mindepth 1 -type d ! -path "feeds/openwrtpackages/lang" ! -path "feeds/openwrtpackages/lang/*" -print
