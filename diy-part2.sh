@@ -10,6 +10,14 @@
 # See /LICENSE for more information.
 #
 
+# 尝试使用openwrt的ruby源码
+./scripts/feeds uninstall ruby
+git clone https://github.com/openwrt/packages --depth 1 op-packages
+rm -rf packages/lang/ruby  # 确保删除现有的 ImmortalWrt ruby 包
+cp -r op-packages/lang/ruby packages/lang/
+./scripts/feeds update packages
+./scripts/feeds install ruby
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
