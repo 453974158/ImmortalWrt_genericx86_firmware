@@ -13,8 +13,8 @@
 # 尝试使用openwrt的ruby源码
 ./scripts/feeds uninstall ruby
 git clone https://github.com/openwrt/packages --depth 1 op-packages
-rm -rf packages/lang/ruby  # 确保删除现有的 ImmortalWrt ruby 包
-cp -r op-packages/lang/ruby packages/lang/
+rm -rf feeds/packages/lang/ruby  # 确保删除现有的 ImmortalWrt ruby 包
+cp -r op-packages/lang/ruby feeds/packages/lang/
 ./scripts/feeds update packages
 ./scripts/feeds install ruby
 
