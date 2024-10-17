@@ -15,7 +15,7 @@ wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85d
 
 #替换原有的 Makefile
 mkdir -p package/lang/
-cp -r feeds/packages/lang/ruby/ package/lang/
+cp -r feeds/packages/lang/ruby/ packages/lang/
 cp ruby.Makefile packages/lang/ruby/Makefile
 
 # Modify default IP
