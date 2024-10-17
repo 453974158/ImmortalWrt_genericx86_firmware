@@ -10,6 +10,17 @@
 # See /LICENSE for more information.
 #
 
+./scripts/feeds uninstall ruby
+# 下载替换的 Makefile
+wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
+
+#替换原有的 Makefile
+cp ruby.Makefile feeds/packages/lang/ruby/Makefile
+
+#清理和重新安装包
+make package/ruby/clean
+./scripts/feeds install -a
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
