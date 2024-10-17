@@ -14,6 +14,7 @@
 wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
 
 #替换原有的 Makefile
+cp ruby.Makefile feeds/packages/lang/ruby/Makefile
 mkdir -p package/lang/
 cp -r feeds/packages/lang/ruby/ package/lang/
 cp ruby.Makefile package/lang/ruby/Makefile
