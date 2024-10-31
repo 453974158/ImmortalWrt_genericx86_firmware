@@ -20,7 +20,7 @@
 #cp ruby.Makefile package/lang/ruby/Makefile
 
 # 修改ruby Makefile
-patch -p0 < files/ruby.patch
+# patch -p0 < files/ruby.patch
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
