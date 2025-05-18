@@ -18,3 +18,6 @@ sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+#luci-app-temp-status 温度显示
+git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
