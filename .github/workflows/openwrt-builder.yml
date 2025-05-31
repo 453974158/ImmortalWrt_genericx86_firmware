@@ -97,6 +97,9 @@ jobs:
         make clean
         rm -rf tmp
     
+    - name: Unset CI env var to bypass Rust bootstrap restrictions
+      run: unset CI
+    
     - name: Compile the firmware
       id: compile
       run: |
