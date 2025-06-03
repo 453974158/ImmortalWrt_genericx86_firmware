@@ -52,7 +52,16 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
+   
+    - name: Additional Disk Cleanup
+      run: |
+        sudo rm -rf /usr/share/man /usr/share/doc /usr/share/info /var/cache/apt/archives/*
+        sudo rm -rf /var/lib/apt/lists/*
+        sudo apt-get clean
+        sudo docker image prune --all --force
+        sudo rm -rf /tmp/*
+        df -hT
+    
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -96,6 +105,14 @@ jobs:
         cd openwrt
         make clean
         rm -rf tmp
+
+    - name: Pre-build OpenWrt Cleanup
+      run: |
+        cd openwrt
+        rm -rf tmp/*
+        rm -rf build_dir/*
+        rm -rf staging_dir/*
+        df -hT
     
     - name: Compile the firmware
       id: compile
