@@ -36,12 +36,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-    - name: 查看磁盘及目录占用
+    - name: Check disk and directory usage
       run: |
         df -h
         du -sh * .[^.]* | sort -h
 
-    - name: 清空 Actions Runner 日志缓存
+    - name: Clear Actions Runner log cache
       if: runner.os == 'Linux'
       run: rm -rf /home/runner/actions-runner/cached/_diag/*
     
