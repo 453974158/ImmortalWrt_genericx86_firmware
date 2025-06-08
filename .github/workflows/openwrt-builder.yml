@@ -35,16 +35,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
-    - name: Check disk and directory usage
-      run: |
-        df -h
-        du -sh * .[^.]* | sort -h
-
-    - name: Clear Actions Runner log cache
-      if: runner.os == 'Linux'
-      run: rm -rf /home/runner/actions-runner/cached/_diag/*
-    
+       
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
