@@ -36,6 +36,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: 查看磁盘及目录占用
+      run: |
+        df -h
+        du -sh * .[^.]* | sort -h
+
+    - name: 清空 Actions Runner 日志缓存
+      if: runner.os == 'Linux'
+      run: rm -rf /home/runner/actions-runner/cached/_diag/*
+    
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
