@@ -23,5 +23,4 @@ sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
 git clone https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 
 #smartdns
-git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
 git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
