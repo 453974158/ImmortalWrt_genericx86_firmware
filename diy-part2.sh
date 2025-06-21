@@ -10,7 +10,11 @@
 # See /LICENSE for more information.
 #
 
-./scripts/feeds install -f luci-app-smartdns
+# 删除 kenzo 源下的 luci-app-smartdns 源码目录
+rm -rf feeds/kenzo/luci-app-smartdns
+
+# 删除 install 后生成的软链接或拷贝
+rm -rf package/feeds/kenzo/luci-app-smartdns
 
 # 下载替换的 Makefile
 #wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
