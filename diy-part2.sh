@@ -10,6 +10,10 @@
 # See /LICENSE for more information.
 #
 
+# 使用luci的luci-app-smartdns源码
+./scripts/feeds uninstall luci-app-smartdns
+./scripts/feeds install -p luci luci-app-smartdns
+
 # 下载替换的 Makefile
 #wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
 
