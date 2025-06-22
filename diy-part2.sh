@@ -17,6 +17,9 @@ rm -rf feeds/kenzo/luci-app-smartdns
 rm -rf package/feeds/kenzo/luci-app-smartdns
 
 #luci-app-smartdns
+rm -rf feeds/kenzo/luci-app-smartdns
+rm -rf package/feeds/kenzo/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
 git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 ./scripts/feeds install luci-app-smartdns
 
