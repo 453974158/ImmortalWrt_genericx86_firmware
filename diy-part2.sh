@@ -10,12 +10,6 @@
 # See /LICENSE for more information.
 #
 
-# 删除 kenzo 源下的 luci-app-smartdns 源码目录
-rm -rf feeds/kenzo/luci-app-smartdns
-
-# 删除 install 后生成的软链接或拷贝
-rm -rf package/feeds/kenzo/luci-app-smartdns
-
 #luci-app-smartdns
 rm -rf feeds/kenzo/luci-app-smartdns
 rm -rf package/feeds/kenzo/luci-app-smartdns
