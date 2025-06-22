@@ -10,13 +10,6 @@
 # See /LICENSE for more information.
 #
 
-#luci-app-smartdns
-rm -rf feeds/kenzo/luci-app-smartdns
-rm -rf package/feeds/kenzo/luci-app-smartdns
-rm -rf feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-./scripts/feeds install luci-app-smartdns
-
 # 下载替换的 Makefile
 #wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
 
