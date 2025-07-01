@@ -13,10 +13,10 @@
 # 使用luci的luci-app-smartdns源码
 ./scripts/feeds uninstall luci-app-smartdns
 ./scripts/feeds install -p luci luci-app-smartdns
+make defconfig
 grep '^# CONFIG_PACKAGE_luci-app-smartdns is not set' .config
 sed -i 's/^# CONFIG_PACKAGE_luci-app-smartdns is not set$/CONFIG_PACKAGE_luci-app-smartdns=y/' .config
 grep '^CONFIG_PACKAGE_luci-app-smartdns=y' .config
-make defconfig
 
 # 下载替换的 Makefile
 #wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
