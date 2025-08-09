@@ -25,7 +25,7 @@ jobs:
           sudo chown $USER:$USER /mnt
 
       - name: Show disk usage before build
-        run: df -h /mnt
+        run: df -h
 
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y build-essential git
@@ -48,7 +48,7 @@ jobs:
           make toolchain -j$(nproc)
 
       - name: Show disk usage after build
-        run: df -h /mnt
+        run: df -h
 
       - name: List build output
         run: ls -lh /mnt/openwrt/bin/targets || true
