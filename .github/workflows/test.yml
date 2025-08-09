@@ -75,7 +75,7 @@ jobs:
         sudo apt-get clean
         sudo docker image prune --all --force
         sudo rm -rf /tmp/*
-        df -hT /mnt
+        df -hT
     
     - name: Clone source code to /mnt
       working-directory: /mnt
@@ -121,7 +121,7 @@ jobs:
         rm -rf tmp build_dir staging_dir
 
     - name: Pre-build Disk Check
-      run: df -hT /mnt
+      run: df -hT
     
     - name: Compile the firmware
       id: compile
@@ -136,7 +136,7 @@ jobs:
 
     - name: Check disk usage after build
       if: (!cancelled())
-      run: df -hT /mnt
+      run: df -hT
 
     - name: Upload bin directory
       uses: actions/upload-artifact@main
