@@ -37,6 +37,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.23.12'
+    - run: go version
+
     - name: Aggressive Disk Cleanup (Before Install)
       run: |
         echo "===== Aggressive Cleanup Start ====="
