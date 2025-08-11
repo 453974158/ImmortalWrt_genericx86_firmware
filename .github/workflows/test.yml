@@ -133,6 +133,8 @@ jobs:
     
     - name: Compile the firmware
       id: compile
+      env:
+        GOTOOLCHAIN: auto
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
