@@ -67,16 +67,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /mnt/workdir
         sudo chown $USER:$GROUPS /mnt/workdir
-   
-    - name: Extra Disk Cleanup (After Install)
-      run: |
-        sudo rm -rf /usr/share/man /usr/share/doc /usr/share/info /var/cache/apt/archives/*
-        sudo rm -rf /var/lib/apt/lists/*
-        sudo apt-get clean
-        sudo docker image prune --all --force
-        sudo rm -rf /tmp/*
-        df -hT
-    
+     
     - name: Clone source code
       working-directory: /mnt/workdir
       run: |
@@ -114,12 +105,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: Clean previous build and build dirs
-      run: |
-        cd openwrt
-        make clean
-        rm -rf tmp build_dir staging_dir
 
     - name: Pre-build Disk Check
       run: df -hT
