@@ -19,18 +19,18 @@ sed -i 's/^# CONFIG_PACKAGE_luci-app-smartdns is not set$/CONFIG_PACKAGE_luci-ap
 grep '^CONFIG_PACKAGE_luci-app-smartdns=y' .config
 
 # 使用immortalwrt的luci-ddns-go源码
-./scripts/feeds uninstall ddns-go
-./scripts/feeds install -p packages ddns-go
-make defconfig
-grep '^# CONFIG_PACKAGE_ddns-go is not set' .config
-sed -i 's/^# CONFIG_PACKAGE_ddns-go is not set$/CONFIG_PACKAGE_ddns-go=y/' .config
-grep '^CONFIG_PACKAGE_ddns-go=y' .config
-./scripts/feeds uninstall luci-app-ddns-go
-./scripts/feeds install -p luci luci-app-ddns-go
-make defconfig
-grep '^# CONFIG_PACKAGE_luci-app-ddns-go is not set' .config
-sed -i 's/^# CONFIG_PACKAGE_luci-app-ddns-go is not set$/CONFIG_PACKAGE_luci-app-ddns-go=y/' .config
-grep '^CONFIG_PACKAGE_luci-app-ddns-go=y' .config
+# ./scripts/feeds uninstall ddns-go
+# ./scripts/feeds install -p packages ddns-go
+# make defconfig
+# grep '^# CONFIG_PACKAGE_ddns-go is not set' .config
+# sed -i 's/^# CONFIG_PACKAGE_ddns-go is not set$/CONFIG_PACKAGE_ddns-go=y/' .config
+# grep '^CONFIG_PACKAGE_ddns-go=y' .config
+# ./scripts/feeds uninstall luci-app-ddns-go
+# ./scripts/feeds install -p luci luci-app-ddns-go
+# make defconfig
+# grep '^# CONFIG_PACKAGE_luci-app-ddns-go is not set' .config
+# sed -i 's/^# CONFIG_PACKAGE_luci-app-ddns-go is not set$/CONFIG_PACKAGE_luci-app-ddns-go=y/' .config
+# grep '^CONFIG_PACKAGE_luci-app-ddns-go=y' .config
 
 # 下载替换的 Makefile
 #wget https://raw.githubusercontent.com/openwrt/packages/b780dd263356150cf467e85dc1676feb12bed727/lang/ruby/Makefile -O ruby.Makefile
