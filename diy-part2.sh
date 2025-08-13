@@ -10,13 +10,21 @@
 # See /LICENSE for more information.
 #
 
-# 使用luci的luci-app-smartdns源码
+# 使用immortalwrt的luci-app-smartdns源码
 ./scripts/feeds uninstall luci-app-smartdns
 ./scripts/feeds install -p luci luci-app-smartdns
 make defconfig
 grep '^# CONFIG_PACKAGE_luci-app-smartdns is not set' .config
 sed -i 's/^# CONFIG_PACKAGE_luci-app-smartdns is not set$/CONFIG_PACKAGE_luci-app-smartdns=y/' .config
 grep '^CONFIG_PACKAGE_luci-app-smartdns=y' .config
+
+# 使用immortalwrt的luci-app-argon-config源码
+./scripts/feeds uninstall luci-app-argon-config
+./scripts/feeds install -p luci luci-app-argon-config
+make defconfig
+grep '^# CONFIG_PACKAGE_luci-app-argon-config is not set' .config
+sed -i 's/^# CONFIG_PACKAGE_luci-app-argon-config is not set$/CONFIG_PACKAGE_luci-app-argon-config=y/' .config
+grep '^CONFIG_PACKAGE_luci-app-argon-config=y' .config
 
 # 使用immortalwrt的luci-ddns-go源码
 ./scripts/feeds uninstall ddns-go
